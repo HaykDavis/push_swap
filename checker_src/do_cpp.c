@@ -22,9 +22,8 @@ int	cpa(t_push **list_a, t_push **list_b)
 		*list_b = tmp->next;
 		tmp->next = *list_a;
 		*list_a = tmp;
-		return (1);
 	}
-	return (0);
+	return (1);
 }
 
 int	cpb(t_push **list_a, t_push **list_b)
@@ -37,7 +36,6 @@ int	cpb(t_push **list_a, t_push **list_b)
 		*list_a = tmp->next;
 		tmp->next = *list_b;
 		*list_b = tmp;
-		return (1);
 	}
-	return (0);
+	return (1);
 }

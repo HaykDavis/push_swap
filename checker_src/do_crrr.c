@@ -17,18 +17,20 @@ int	crra(t_push **list_a)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_a) != NULL)
+	if ((*list_a))
 	{
-		tmp = *list_a;
-		tmp1 = tmp;
-		while (tmp->next->next)
-			tmp = tmp->next;
-		*list_a = tmp->next;
-		tmp->next = NULL;
-		(*list_a)->next = tmp1;
-		return (1);
+		if ((*list_a)->next)
+		{
+			tmp = *list_a;
+			tmp1 = tmp;
+			while (tmp->next->next)
+				tmp = tmp->next;
+			*list_a = tmp->next;
+			tmp->next = NULL;
+			(*list_a)->next = tmp1;
+		}
 	}
-	return (0);
+	return (1);
 }
 
 int	crrb(t_push **list_b)
@@ -36,18 +38,20 @@ int	crrb(t_push **list_b)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_b) != NULL)
+	if ((*list_b))
 	{
-		tmp = *list_b;
-		tmp1 = tmp;
-		while (tmp->next->next)
-			tmp = tmp->next;
-		*list_b = tmp->next;
-		tmp->next = NULL;
-		(*list_b)->next = tmp1;
-		return (1);
+		if ((*list_b)->next)
+		{
+			tmp = *list_b;
+			tmp1 = tmp;
+			while (tmp->next->next)
+				tmp = tmp->next;
+			*list_b = tmp->next;
+			tmp->next = NULL;
+			(*list_b)->next = tmp1;
+		}
 	}
-	return (0);
+	return (1);
 }
 
 int	crrr(t_push **list_a, t_push **list_b)
@@ -55,23 +59,25 @@ int	crrr(t_push **list_a, t_push **list_b)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_b) != NULL && (*list_a) != NULL)
+	if ((*list_b) && (*list_a))
 	{
-		tmp = *list_a;
-		tmp1 = tmp;
-		while (tmp->next->next)
-			tmp = tmp->next;
-		*list_a = tmp->next;
-		tmp->next = NULL;
-		(*list_a)->next = tmp1;
-		tmp = *list_b;
-		tmp1 = tmp;
-		while (tmp->next->next)
-			tmp = tmp->next;
-		*list_b = tmp->next;
-		tmp->next = NULL;
-		(*list_b)->next = tmp1;
-		return (1);
+		if ((*list_b)->next && (*list_a)->next)
+		{
+			tmp = *list_a;
+			tmp1 = tmp;
+			while (tmp->next->next)
+				tmp = tmp->next;
+			*list_a = tmp->next;
+			tmp->next = NULL;
+			(*list_a)->next = tmp1;
+			tmp = *list_b;
+			tmp1 = tmp;
+			while (tmp->next->next)
+				tmp = tmp->next;
+			*list_b = tmp->next;
+			tmp->next = NULL;
+			(*list_b)->next = tmp1;
+		}
 	}
-	return (0);
+	return (1);
 }

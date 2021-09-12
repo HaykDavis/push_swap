@@ -17,16 +17,18 @@ int	csa(t_push **list_a)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_a) != NULL)
+	if ((*list_a))
 	{
-		tmp = *list_a;
-		tmp1 = tmp->next->next;
-		*list_a = (*list_a)->next;
-		(*list_a)->next = tmp;
-		(*list_a)->next->next = tmp1;
-		return (1);
+		if ((*list_a)->next)
+		{
+			tmp = *list_a;
+			tmp1 = tmp->next->next;
+			*list_a = (*list_a)->next;
+			(*list_a)->next = tmp;
+			(*list_a)->next->next = tmp1;
+		}
 	}
-	return (0);
+	return (1);
 }
 
 int	csb(t_push **list_b)
@@ -34,16 +36,18 @@ int	csb(t_push **list_b)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_b) != NULL)
+	if ((*list_b))
 	{
-		tmp = *list_b;
-		tmp1 = tmp->next->next;
-		*list_b = (*list_b)->next;
-		(*list_b)->next = tmp;
-		(*list_b)->next->next = tmp1;
-		return (1);
+		if ((*list_b)->next)
+		{
+			tmp = *list_b;
+			tmp1 = tmp->next->next;
+			*list_b = (*list_b)->next;
+			(*list_b)->next = tmp;
+			(*list_b)->next->next = tmp1;
+		}
 	}
-	return (0);
+	return (1);
 }
 
 int	css(t_push **list_a, t_push **list_b)
@@ -51,19 +55,21 @@ int	css(t_push **list_a, t_push **list_b)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_b) != NULL && (*list_a) != NULL)
+	if ((*list_b) && (*list_a))
 	{
-		tmp = *list_a;
-		tmp1 = tmp->next->next;
-		*list_a = (*list_a)->next;
-		(*list_a)->next = tmp;
-		(*list_a)->next->next = tmp1;
-		tmp = *list_b;
-		tmp1 = tmp->next->next;
-		*list_b = (*list_b)->next;
-		(*list_b)->next = tmp;
-		(*list_b)->next->next = tmp1;
-		return (1);
+		if ((*list_b)->next && (*list_a)->next)
+		{
+			tmp = *list_a;
+			tmp1 = tmp->next->next;
+			*list_a = (*list_a)->next;
+			(*list_a)->next = tmp;
+			(*list_a)->next->next = tmp1;
+			tmp = *list_b;
+			tmp1 = tmp->next->next;
+			*list_b = (*list_b)->next;
+			(*list_b)->next = tmp;
+			(*list_b)->next->next = tmp1;
+		}
 	}
-	return (0);
+	return (1);
 }

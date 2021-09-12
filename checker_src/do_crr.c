@@ -17,18 +17,20 @@ int	cra(t_push **list_a)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_a) != NULL)
+	if ((*list_a))
 	{
-		tmp = *list_a;
-		tmp1 = *list_a;
-		*list_a = (*list_a)->next;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = tmp1;
-		tmp->next->next = NULL;
-		return (1);
+		if ((*list_a)->next)
+		{
+			tmp = *list_a;
+			tmp1 = *list_a;
+			*list_a = (*list_a)->next;
+			while (tmp->next)
+				tmp = tmp->next;
+			tmp->next = tmp1;
+			tmp->next->next = NULL;
+		}
 	}
-	return (0);
+	return (1);
 }
 
 int	crb(t_push **list_b)
@@ -36,18 +38,20 @@ int	crb(t_push **list_b)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_b) != NULL)
+	if ((*list_b))
 	{
-		tmp = *list_b;
-		tmp1 = *list_b;
-		*list_b = (*list_b)->next;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = tmp1;
-		tmp->next->next = NULL;
-		return (1);
+		if ((*list_b)->next)
+		{
+			tmp = *list_b;
+			tmp1 = *list_b;
+			*list_b = (*list_b)->next;
+			while (tmp->next)
+				tmp = tmp->next;
+			tmp->next = tmp1;
+			tmp->next->next = NULL;
+		}
 	}
-	return (0);
+	return (1);
 }
 
 int	crr(t_push **list_a, t_push **list_b)
@@ -55,23 +59,25 @@ int	crr(t_push **list_a, t_push **list_b)
 	t_push	*tmp;
 	t_push	*tmp1;
 
-	if ((*list_b) != NULL && (*list_a) != NULL)
+	if ((*list_b) && (*list_a))
 	{
-		tmp = *list_a;
-		tmp1 = *list_a;
-		*list_a = (*list_a)->next;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = tmp1;
-		tmp->next->next = NULL;
-		tmp = *list_b;
-		tmp1 = *list_b;
-		*list_b = (*list_b)->next;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = tmp1;
-		tmp->next->next = NULL;
-		return (1);
+		if ((*list_b)->next && (*list_a)->next)
+		{
+			tmp = *list_a;
+			tmp1 = *list_a;
+			*list_a = (*list_a)->next;
+			while (tmp->next)
+				tmp = tmp->next;
+			tmp->next = tmp1;
+			tmp->next->next = NULL;
+			tmp = *list_b;
+			tmp1 = *list_b;
+			*list_b = (*list_b)->next;
+			while (tmp->next)
+				tmp = tmp->next;
+			tmp->next = tmp1;
+			tmp->next->next = NULL;
+		}
 	}
-	return (0);
+	return (1);
 }
