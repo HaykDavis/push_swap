@@ -18,32 +18,26 @@ void	do_error(void)
 	exit (0);
 }
 
-int	part_of_atoi(char *str, int	i, int point)
+long int	part_of_atoi(char *str, long int i, long int point)
 {
-	int	n;
+	long int	n;
 
 	n = 0;
 	while (str[i])
 	{
-		if (n > 214748364 || n < -214748364)
-			do_error();
 		if (str[i] < '0' || str[i] > '9')
 			do_error();
-		if (n > 214748364 && (str[i + 1] - '0') >= 7)
-			return (-1);
-		else if (n < -214748364 && (str[i + 1] - '0') >= 8)
-			return (0);
 		n = 10 * n + point * (str[i] - '0');
 		i++;
 	}
 	return (n);
 }
 
-int	ft_atoi(char *str)
+long int	ft_atoi(char *str)
 {
-	int	i;
-	int	point;
-	int	n;
+	long int	i;
+	long int	point;
+	long int	n;
 
 	i = 0;
 	n = 0;
@@ -59,6 +53,8 @@ int	ft_atoi(char *str)
 	if (str[i] >= '0' && str[i] <= '9')
 		n = part_of_atoi(str, i, point);
 	else
+		do_error();
+	if (n > 2147483647 || n < -2147483648)
 		do_error();
 	return (n);
 }
