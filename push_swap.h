@@ -6,7 +6,7 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 15:23:40 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/09 14:35:30 by psoares          ###   ########.fr       */
+/*   Updated: 2021/09/13 19:31:13 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	do_sort_100(t_push **a, t_push **b);
 void	do_sort_500(t_push **a, t_push **b);
 void	sort(t_push **a, t_push **b, int count);
 
-long int		ft_atoi(char *str);
+int		ft_atoi(char *str);
 int		minchr(t_push **a);
 int		maxchr(t_push **a);
 int		numb_amo(t_push **a);

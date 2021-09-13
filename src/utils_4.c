@@ -6,7 +6,7 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 15:23:17 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/07 12:51:18 by psoares          ###   ########.fr       */
+/*   Updated: 2021/09/13 19:31:02 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	do_error(void)
 	exit (0);
 }
 
-long int	part_of_atoi(char *str, long int i, long int point)
+int	part_of_atoi(char *str, long int i, long int point)
 {
-	long int	n;
+	int	n;
 
 	n = 0;
 	while (str[i])
@@ -33,11 +33,11 @@ long int	part_of_atoi(char *str, long int i, long int point)
 	return (n);
 }
 
-long int	ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	long int	i;
-	long int	point;
-	long int	n;
+	int	i;
+	int	point;
+	int	n;
 
 	i = 0;
 	n = 0;
@@ -53,8 +53,6 @@ long int	ft_atoi(char *str)
 	if (str[i] >= '0' && str[i] <= '9')
 		n = part_of_atoi(str, i, point);
 	else
-		do_error();
-	if (n > 2147483647 || n < -2147483648)
 		do_error();
 	return (n);
 }
