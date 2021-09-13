@@ -6,7 +6,7 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 14:33:44 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/13 12:25:03 by psoares          ###   ########.fr       */
+/*   Updated: 2021/09/13 19:04:32 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ size_t	ft_strlen(const char *str)
 char	*ft_strdup(char *str)
 {
 	char	*dubl;
-	char	*dubl2;
 	int		i;
 
 	if (!str)
@@ -88,7 +87,5 @@ char	*ft_strdup(char *str)
 		i++;
 	}
 	dubl[i] = '\0';
-	dubl2 = dubl;
-	free(dubl2);
 	return (dubl);
 }

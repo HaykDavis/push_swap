@@ -6,7 +6,7 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 23:21:09 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/09 18:34:00 by psoares          ###   ########.fr       */
+/*   Updated: 2021/09/13 19:05:14 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,19 @@ int	check_stacks(char *line, t_push **one, t_push **two)
 	return (0);
 }
 
-void	do_gnl(t_push *one, t_push *two)
+void	do_gnl(t_push **one, t_push **two)
 {
 	char	*line;
 
 	while (get_next_line(0, &line))
 	{
-		if (!(check_stacks(line, &one, &two)))
+		if (!(check_stacks(line, one, two)))
 			do_error();
 		free(line);
 		line = NULL;
 	}
-	if ((!is_sorted(one)) && !two)
+	free(line);
+	if ((!is_sorted(*one)) && !two)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -76,5 +77,5 @@ int	main(int argc, char *argv[])
 	if (!one)
 		do_error();
 	do_index(&one, i);
-	do_gnl(one, two);
+	do_gnl(&one, &two);
 }
