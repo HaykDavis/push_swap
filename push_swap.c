@@ -6,7 +6,7 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 15:23:36 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/13 19:32:28 by psoares          ###   ########.fr       */
+/*   Updated: 2021/09/13 23:41:07 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ int	main(int argc, char *argv[])
 	static t_push		*a;
 	static t_push		*b;
 	static int			i;
-	int					d;
+	int					tmp;
 
 	if (argc > 1)
 	{
 		while (argc != 1)
 		{
-			d = ft_atoi(argv[--argc]);
-			if (d < 0 && argv[argc][0] != '-')
+			tmp = ft_atoi(argv[--argc]);
+			if (tmp < 0 && argv[argc][0] != '-')
 				do_error();
-			if (d > 0 && argv[argc][0] == '-')
+			if (tmp > 0 && argv[argc][0] == '-')
 				do_error();
-			push(&a, d);
+			push(&a, tmp);
 			i++;
 		}
 	}

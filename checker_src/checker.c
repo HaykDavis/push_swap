@@ -6,7 +6,7 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 23:21:09 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/13 19:05:14 by psoares          ###   ########.fr       */
+/*   Updated: 2021/09/14 00:14:36 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	do_gnl(t_push **one, t_push **two)
 		line = NULL;
 	}
 	free(line);
-	if ((!is_sorted(*one)) && !two)
+	if ((!is_sorted(*one)) && !(*two))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -63,19 +63,24 @@ int	main(int argc, char *argv[])
 	static t_push		*one;
 	static t_push		*two;
 	static int			i;
+	int					tmp;
 
-	if (argc > 2)
+	if (argc > 1)
 	{
 		while (argc != 1)
 		{
-			push(&one, ft_atoi(argv[--argc]));
-			if (one->number > INT_MAX || one->number < INT_MIN)
+			tmp = ft_atoi(argv[--argc]);
+			if (tmp < 0 && argv[argc][0] != '-')
 				do_error();
+			if (tmp > 0 && argv[argc][0] == '-')
+				do_error();
+			push(&one, tmp);
 			i++;
 		}
 	}
 	if (!one)
-		do_error();
+		return (0);
+	check_rep(&one, i);
 	do_index(&one, i);
 	do_gnl(&one, &two);
 }
