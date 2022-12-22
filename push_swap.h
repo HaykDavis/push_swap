@@ -6,9 +6,11 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 15:23:40 by psoares           #+#    #+#             */
-/*   Updated: 2021/09/13 19:31:13 by psoares          ###   ########.fr       */
+/*   Updated: 2022/12/22 08:31:53 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Vers. 1.0.1
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
