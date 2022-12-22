@@ -6,12 +6,12 @@
 /*   By: psoares <psoares@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 15:23:40 by psoares           #+#    #+#             */
-/*   Updated: 2022/12/22 08:31:53 by psoares          ###   ########.fr       */
+/*   Updated: 2022/12/22 08:36:03 by psoares          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //Vers. 1.0.1
-
+//smth new
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
